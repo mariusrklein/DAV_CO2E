@@ -1,11 +1,30 @@
+<!DOCTYPE html>
 <html>
-<head>
-    <title>PDF-Formulare hochladen</title>
-</head>
-<body>
-    <form action = "/upload" method="POST" enctype="multipart/form-data">
-        <input type="file" name="file" multiple />
-        <input type = "submit" value="Hochladen">
-    </form>
-</body>
+    <head>
+        <!--Import Google Icon Font-->
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <!--Import materialize.css-->
+        <link type="text/css" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"  media="screen,projection"/>
+
+        <!--Let browser know website is optimized for mobile-->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    </head>
+
+    <body>
+        <div class="container">
+            <!-- Page Content goes here -->
+            <div class="row">
+                <div class="col s12">
+                    <h3>CO₂-Emissions-Bilanzierung DAV</h3>
+                    <h5>Automatisches Lese-Tool für PDF-Formulare</h5>
+                    <form action = "/upload" method="POST" enctype="multipart/form-data">
+                        <input type="file" name="file" multiple />
+                        <input type="submit" value="Hochladen">
+                    </form>
+                </div>
+            </div>
+        </div>
+        <!--JavaScript at end of body for optimized loading-->
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    </body>
 </html>
