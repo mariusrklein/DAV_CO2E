@@ -25,21 +25,17 @@ def upload():
         # Get the list of files from webpage
         files = request.files.getlist("file")
 
-        out_string = '''<h1>Files Uploaded Successfully.!</h1>
-        <a href="/" id="zurueck" class="btn btn-outline-info">Zurück</a>
-        <a href="get_csv" id="download" class="btn btn-outline-info">Download</a>'''
-# {{url_for('get_csv', filename= 'some_csv')}}
         for i, file in enumerate(files):
             pdf_reader = PdfFileReader(file)
             dictionary = pdf_reader.getFormTextFields() # returns a python dictionary
-            res_dict[str(i) + "_" + file.filename] = dictionary
+            
+            dictionary['dateiname'] = file.filename
+            res_dict["form_" + str(i+1)] = dictionary
 
         res_df = pd.DataFrame.from_dict(res_dict)
         session["df"] = res_df.to_csv(index=True, header=True, sep=";")
 
-        out_string = out_string + res_df.to_html()
-
-        return out_string
+        return render_template("overview.html", result_table = res_df.to_html(classes=['responsive-table', 'striped']))
 
 @app.route("/get_csv", methods=['GET', 'POST'])
 def get_csv():

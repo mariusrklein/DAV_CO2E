@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!--Import Google Icon Font-->
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <!--Import materialize.css-->
+        <link type="text/css" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"  media="screen,projection"/>
+
+        <!--Let browser know website is optimized for mobile-->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    </head>
+
+    <body>
+        <div class="container">
+            <!-- Page Content goes here -->
+            <div class="row">
+                <div class="col s12">
+                    <h3>CO₂-Emissions-Bilanzierung DAV</h3>
+                    <h5>Übersicht PDF-Formulare</h5>
+                    <a href="/" id="zurueck" class="btn">Zurück</a>
+                    <a href="get_csv" id="download" class="btn btn-outline-info">Download</a>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col s12">
+                    {{ result_table | safe }}
+                </div>
+            </div>
+        </div>
+        <!--JavaScript at end of body for optimized loading-->
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    </body>
+</html>
